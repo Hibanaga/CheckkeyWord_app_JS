@@ -188,9 +188,14 @@ thead th {
   background-color: #5b60ff;
   padding: 1.5rem;
   position: absolute;
-  top: 5rem;
-  left: 5rem;
-  border-radius: 1rem;
-  border: 2px solid #f2f4f8;
+  top: 4rem;
+  left: 4rem;
+  width: 35rem;
   transition: 0.2s ease all;
+}
+
+.modal h2 {
+  font-weight: 300;
+  color: #f2f4f8;
+  font-size: 2rem;
 }
