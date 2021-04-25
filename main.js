@@ -105,13 +105,10 @@ const obj = {
 };
 
 document.addEventListener("keydown", function (event) {
-  //   event.preventDefault();
+  event.preventDefault();
   let htmlnum = "";
 
   htmlnum += `<h1 class="mainKey">${event.which}</h1>`;
-  // document.body.innerHTML = html;
-
-  // console.log(event.key);
 
   variable = `<h1 class="mainKey">${event.which}</h1>`;
   document.querySelector("main").innerHTML = htmlnum;
@@ -130,13 +127,10 @@ document.addEventListener("keydown", function (event) {
   document.querySelector("nav").innerHTML = navInfo;
 });
 
-//   ? why i doesn't copy to value event.key and event.code
-
 document.querySelector("#btnShowTable").addEventListener("click", () => {
   if (toggleValue) {
     let html =
       "<table class='showTable'> <thead> <tr> <th>Key code</th> <th>Key</th> </tr> </thead>";
-    // <tr> <th></th> <th>Key</th> </tr>
 
     for (let key in obj) {
       html += `<tr> <td>${obj[key]}</td> <td>${key}</td></tr>`;
@@ -160,19 +154,16 @@ document.querySelector("#btnShowTable").addEventListener("click", () => {
 });
 
 function copyToClipBoard(value) {
-  // console.log(value);
   realizeCopy(value);
 }
 
 function copyToClipBoardKey() {
   let value = document.querySelector("#btn_copyValueKey").value;
-  // console.log(value);
   realizeCopy(value);
 }
 
 function copyToClipBoardCode() {
   let value = document.querySelector("#btn_copyValueCode").value;
-  // console.log(value);
   realizeCopy(value);
 }
 
@@ -182,8 +173,6 @@ function realizeCopy(str) {
 
   dummy.value = str;
   dummy.select();
-
-  // alert(`you copied to clicpboard ${str}`);
 
   ShowModal();
   document.execCommand("copy");
@@ -195,12 +184,10 @@ function ShowModal() {
   let html = `<div class="modal">`;
   html += `<h2>Succesfully copied to clipBoard</h2>`;
   html += `</div>`;
-  //    document.querySelector("div").innerHTML = html;
 
   setTimeout(function () {
     document.querySelector("div").innerHTML = "";
   }, 1000);
 
-  //
   document.querySelector("div").innerHTML += html;
 }
